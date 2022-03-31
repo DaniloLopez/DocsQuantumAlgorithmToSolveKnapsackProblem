@@ -1,0 +1,103 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+\usepackage{lscape}
+\title{Output tables for the test of Multiple comparisons.}
+\author{}
+\date{\today}
+\begin{document}
+\begin{landscape}
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+\section{Average rankings of Friedman test}
+
+
+
+Average ranks obtained by applying the Friedman procedure
+
+\begin{table}[!htp]
+\centering
+\begin{tabular}{|c|c|}\hline
+Algorithm&Ranking\\\hline
+Slime-mould & 1.7167\\
+Grey-wolf & 3.7\\
+Dragon-fly & 2.8667\\
+QuantumEigensolver & 1.7167\\
+\hline
+\end{tabular}
+\caption{Average Rankings of the algorithms}
+\end{table}
+
+Friedman statistic considering reduction performance (distributed according to chi-square with 3 degrees of freedom: 50.43.
+
+P-value computed by Friedman Test: 1.0998069122081233E-10.\newline
+
+Iman and Davenport statistic considering reduction performance (distributed according to F-distribution with 3 and 87 degrees of freedom: 36.95906.
+
+P-value computed by Iman and Daveport Test: 1.6616861418307607E-15.\newline
+
+
+
+\pagebreak
+
+\section{Post hoc comparisons}
+
+Results achieved on post hoc comparisons for $\alpha = 0.05$, $\alpha = 0.10$ and adjusted p-values.
+
+\subsection{P-values for $\alpha=0.05$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{ccccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$&Holm\\
+\hline6&Slime-mould vs. Grey-wolf&5.95&0&0.008333\\
+5&Grey-wolf vs. QuantumEigensolver&5.95&0&0.01\\
+4&Slime-mould vs. Dragon-fly&3.45&0.000561&0.0125\\
+3&Dragon-fly vs. QuantumEigensolver&3.45&0.000561&0.016667\\
+2&Grey-wolf vs. Dragon-fly&2.5&0.012419&0.025\\
+1&Slime-mould vs. QuantumEigensolver&0&1&0.05\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.05$}
+\end{table}Holm's procedure rejects those hypotheses that have an unadjusted p-value $\le0.05$.
+
+\pagebreak
+
+\subsection{P-values for $\alpha=0.10$}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{ccccc}
+$i$&algorithms&$z=(R_0 - R_i)/SE$&$p$&Holm\\
+\hline6&Slime-mould vs. Grey-wolf&5.95&0&0.016667\\
+5&Grey-wolf vs. QuantumEigensolver&5.95&0&0.02\\
+4&Slime-mould vs. Dragon-fly&3.45&0.000561&0.025\\
+3&Dragon-fly vs. QuantumEigensolver&3.45&0.000561&0.033333\\
+2&Grey-wolf vs. Dragon-fly&2.5&0.012419&0.05\\
+1&Slime-mould vs. QuantumEigensolver&0&1&0.1\\
+\hline
+\end{tabular}
+\caption{P-values Table for $\alpha=0.10$}
+\end{table}Holm's procedure rejects those hypotheses that have an unadjusted p-value $\le0.1$.
+
+\pagebreak
+
+\subsection{Adjusted p-values}
+
+\begin{table}[!htp]
+\centering\scriptsize
+\begin{tabular}{cccc}
+i&hypothesis&unadjusted $p$&$p_{Holm}$\\
+\hline1&Slime-mould vs .Grey-wolf&0&0\\
+2&Grey-wolf vs .QuantumEigensolver&0&0\\
+3&Slime-mould vs .Dragon-fly&0.000561&0.002242\\
+4&Dragon-fly vs .QuantumEigensolver&0.000561&0.002242\\
+5&Grey-wolf vs .Dragon-fly&0.012419&0.024839\\
+6&Slime-mould vs .QuantumEigensolver&1&1\\
+\hline
+\end{tabular}
+\caption{Adjusted $p$-values}
+\end{table}
+
+\end{landscape}
+\end{document}
